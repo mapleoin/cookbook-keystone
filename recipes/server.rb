@@ -100,9 +100,7 @@ bootstrap_token = secret "secrets", "keystone_bootstrap_token"
 
 bind_interface = node["keystone"]["bind_interface"]
 interface_node = node["network"]["interfaces"][bind_interface]["addresses"]
-ip_address = interface_node.select do |address, data|
-  data['family'] == "inet"
-end[0][0]
+ip_address, _ = interface_node.first {|address, data| data['family'] == "inet"}
 
 template "/etc/keystone/keystone.conf" do
   source "keystone.conf.erb"
