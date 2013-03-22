@@ -9,7 +9,7 @@ version          "2012.2.0"
 recipe           "keystone::db", "Configures database for use with keystone"
 recipe           "keystone::server", "Installs and Configures Keystone Service"
 
-%w{ ubuntu fedora redhat centos }.each do |os|
+%w{ ubuntu fedora redhat centos suse }.each do |os|
   supports os
 end
 
