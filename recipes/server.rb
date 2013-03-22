@@ -30,7 +30,8 @@ platform_options = node["keystone"]["platform"]
 # https://bugs.launchpad.net/ubuntu/+source/keystone/+bug/931236
 ################
 
-platform_options["mysql_python_packages"].each do |pkg|
+db_type = node['openstack']['db']['identity']['db_type']
+platform_options["#{db_type}_python_packages"].each do |pkg|
   package pkg do
     action :install
   end

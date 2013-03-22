@@ -72,6 +72,7 @@ when "fedora", "redhat", "centos" # :pragma-foodcritic: ~FC024 - won't fix this
   default['keystone']['group'] = "keystone"
   default["keystone"]["platform"] = {
     "mysql_python_packages" => [ "MySQL-python" ],
+    "postgresql_python_packages" => [ "python-psycopg2" ],
     "keystone_packages" => [ "openstack-keystone" ],
     "keystone_service" => "openstack-keystone",
     "keystone_process_name" => "keystone-all",
@@ -82,6 +83,7 @@ when "suse"
   default['keystone']['group'] = "openstack-keystone"
   default["keystone"]["platform"] = {
     "mysql_python_packages" => [ "python-mysql" ],
+    "postgresql_python_packages" => [ "python-psycopg2" ],
     "keystone_packages" => [ "openstack-keystone" ],
     "keystone_service" => "openstack-keystone",
     "keystone_process_name" => "keystone-all",
@@ -92,6 +94,7 @@ when "ubuntu"
   default['keystone']['group'] = "keystone"
   default["keystone"]["platform"] = {
     "mysql_python_packages" => [ "python-mysqldb" ],
+    "postgresql_python_packages" => [ "python-psycopg2" ],
     "keystone_packages" => [ "keystone" ],
     "keystone_service" => "keystone",
     "keystone_process_name" => "keystone-all",
