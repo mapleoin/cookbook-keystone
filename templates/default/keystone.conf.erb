@@ -3,7 +3,7 @@
 
 
 [DEFAULT]
-public_port = <%= node["keystone"]["service_port"] %>
+public_port = <%= node["keystone"]["public_port"] %>
 admin_port = <%= node["keystone"]["admin_port"] %>
 admin_token = <%= @bootstrap_token %>
 bind_host = <%= @ip_address %>
@@ -15,6 +15,8 @@ debug = <%= node["keystone"]["debug"] %>
 <% else %>
 log_config = /etc/keystone/logging.conf
 <% end %>
+# The base endpoint URLs for keystone that are advertised to clients
+# (NOTE: this does NOT affect how keystone listens for connections)
 public_endpoint = <%= node["keystone"]["public_endpoint"] %>
 admin_endpoint = <%= node["keystone"]["admin_endpoint"] %>
 

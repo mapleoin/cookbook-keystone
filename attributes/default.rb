@@ -15,7 +15,7 @@ default["keystone"]["db"]["username"] = "keystone"
 default["keystone"]["verbose"] = "False"
 default["keystone"]["debug"] = "False"
 
-default["keystone"]["service_port"] = "5000"
+default["keystone"]["public_port"] = "5000"
 default["keystone"]["admin_port"] = "35357"
 default["keystone"]["region"] = "RegionOne"
 default["keystone"]["public_endpoint"] = "http://127.0.0.1:$public_port/"
