@@ -3,7 +3,7 @@
 
 
 [DEFAULT]
-public_port = <%= node["keystone"]["service_port"] %>
+public_port = <%= node["keystone"]["public_port"] %>
 admin_port = <%= node["keystone"]["admin_port"] %>
 admin_token = <%= @bootstrap_token %>
 bind_host = <%= @ip_address %>

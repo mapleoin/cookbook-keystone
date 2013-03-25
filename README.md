@@ -234,8 +234,8 @@ Attributes
 
 * `keystone["db_server_chef_role"]` - The name of the Chef role that knows about the db server
 * `keystone["bind_interface"]` - Interface to bind keystone to
-* `keystone["service_port"]` - Port to listen on for client functions
-* `keystone["admin_port"]` - Port to listen on for admin functions
+* `keystone["public_port"]` - The port number which the public service listens on
+* `keystone["admin_port"]` - The port number which the public admin listens on
 * `keystone["user"]` - User keystone runs as
 * `keystone["group"]` - Group keystone runs as
 * `keystone["db"]` - Name of keystone database
@@ -245,8 +245,6 @@ Attributes
 * `keystone["api_ipaddress"]` - IP address for the keystone API to bind to. _TODO_: Rename to bind_address
 * `keystone["verbose"]` - Enables/disables verbose output for keystone API server
 * `keystone["debug"]` - Enables/disables debug output for keystone API server
-* `keystone["service_port"]` - Port for the keystone service API to bind to
-* `keystone["admin_port"]` - Port for the keystone admin service to bind to
 * `keystone["admin_token"]` - Admin token for bootstraping keystone server
 * `keystone["roles"]` - Array of roles to create in the keystone server
 * `keystone["users"]` - Array of users to create in the keystone server
