@@ -1,4 +1,3 @@
-require 'net/http'
 require 'open-uri'
 
 require 'minitest/spec'
@@ -11,13 +10,7 @@ describe_recipe 'keystone::server' do
     end
 
     it 'should answer identity api requests' do
-      parts = node['openstack']['endpoints']['identity-api']
-
-      uri = URI::Generic.build(
-        :scheme => parts['scheme'],
-        :host => parts['host'],
-        :port => parts['port'].to_i,
-        :path => parts['path'])
+      uri = endpoint 'identity-api'
 
       open(uri.to_s) do |r|
         assert_equal 'application/json', r.content_type
@@ -25,14 +18,7 @@ describe_recipe 'keystone::server' do
     end
 
     it 'should answer identity admin requests' do
-      parts = node['openstack']['endpoints']['identity-admin']
-
-      uri = URI::Generic.build(
-        :scheme => parts['scheme'],
-        :host => parts['host'],
-        :port => parts['port'].to_i,
-        :path => parts['path'])
-
+      uri = endpoint 'identity-admin'
       open(uri.to_s) do |r|
         assert_equal 'application/json', r.content_type
       end
